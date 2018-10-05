@@ -10,7 +10,7 @@ const userSchema = new Schema({
     name: { type: String },
     email: { type: String },
     password: { type: String },
-    role: { type: String },
+    admin: { type: Boolean, default: false },
     isActive: { type: Boolean, default: true },
 });
 

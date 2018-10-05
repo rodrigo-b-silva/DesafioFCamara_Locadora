@@ -6,16 +6,10 @@ import { HttpClientModule } from '@angular/common/http' //módulo de requisiçã
 import { AppRoutingModule } from './app-routing.module'; //arquivo de rotas
 
 import { AppComponent } from './app.component';
-import { CarroComponent } from './carro.component';
-import { BolaComponent } from './bola.component';
-import { ErroComponent } from './erro.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    CarroComponent,
-    BolaComponent,
-    ErroComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
