@@ -1,15 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router'; //módulos  de rotas que serão usados
 
-import { BolaComponent } from './bola.component';
-import { ErroComponent } from './erro.component';
-import { CarroComponent } from './carro.component';
-
 const rotas: Routes = [
-    {path: '', redirectTo: '/bolinha', pathMatch: 'full'},
-    {path: 'bolinha', component: BolaComponent},
-    {path: 'carrinho', component: CarroComponent},
-    {path: '**', component: ErroComponent}
+    {path: '', redirectTo: '/bolinha', pathMatch: 'full'}
 ];
 
 @NgModule({

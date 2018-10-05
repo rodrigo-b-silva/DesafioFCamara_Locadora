@@ -11,7 +11,6 @@ class UserController{
     }
 
     getById(req, res){
-        let id = req.params.id;
         return this.User.find({
             _id: req.params.id
         })

@@ -2,7 +2,7 @@
 const express = require('express');
 const userRouter = express.Router();
 
-//controllers
+//model
 const User = require('../models/users');
 
 //importa e instancia o UserController
