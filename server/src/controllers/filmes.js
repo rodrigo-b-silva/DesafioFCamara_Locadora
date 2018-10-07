@@ -7,7 +7,7 @@ class FilmeController{
     get(req, res){
         return this.Filme.find({})
             .then(filme => res.send(filme))
-            .catch(err => res.status(400).send(err.message));
+            .catch(err => res.status(404).send(err.message));
     }
 
     getById(req, res){

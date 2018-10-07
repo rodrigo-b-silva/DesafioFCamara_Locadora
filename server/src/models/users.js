@@ -9,6 +9,9 @@ const hashAsync = Util.promisify(bcrypt.hash);
 const userSchema = new Schema({
     name: { type: String },
     email: { type: String },
+    rg: { type: String },
+    endereco: { type: String },
+    telefone: { type: String },
     password: { type: String },
     admin: { type: Boolean, default: false },
     isActive: { type: Boolean, default: true },
@@ -31,7 +34,10 @@ userSchema.set('toJSON', {
         _id: ret._id,
         email: ret.email,
         name: ret.name,
-        role: ret.role,
+        rg: ret.rg,
+        endereco: ret.endereco,
+        telefone: ret.telefone,
+        admin: ret.admin,
         isActive: ret.isActive
     })
 });

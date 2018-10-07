@@ -16,3 +16,5 @@ const reservaSchema = new Schema({
     }
     
 });
+
+module.exports = mongoose.model('reserva', reservaSchema, 'reservas')

@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-sm-3">
+    <app-admin></app-admin>
+  </div>
+  <div class="col-sm-9">
+    <h1>Regras de Locação</h1>
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label class="col-sm-2 control-label" for="tempoMin">Tempo mínimo</label>
+        <div class="col-sm-10">
+          <input type="number" class="form-control" id="tempoMin" name="tempoMin" min="1">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="tempoMax">Tempo máximo</label>
+        <div class="col-sm-10">
+          <input type="number" id="tempoMax" class="form-control" name="tempoMax" min="1">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="valorMulta">Valor de multa</label>
+        <div class="col-sm-10">
+          <input type="text" id="valorMulta" class="form-control" name="valorMulta">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

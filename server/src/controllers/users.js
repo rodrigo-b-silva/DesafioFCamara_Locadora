@@ -31,7 +31,10 @@ class UserController{
             .then(user => { //o password só será recebido no update quando a intenção for alterar
                 user.name = body.name,
                 user.email = body.email,
-                user.role = body.role,
+                user.rg = body.rg,
+                user.endereco = body.endereco,
+                user.telefone = body.telefone,
+                user.admin = body.admin,
                 user.isActive = body.isActive
                 if(body.password){
                     user.password = body.password;
