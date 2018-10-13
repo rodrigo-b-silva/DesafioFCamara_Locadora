@@ -1,32 +1,19 @@
 const express = require('express');
 const filmesRouter = express.Router();
+const authService = require('../services/auth.service');
 
 //model
 const Filme = require('../models/filmes');
 
 //controller
-const FilmeController = require('../controllers/filmes');
-const filmeController = new FilmeController(Filme);
+const filmeController = require('../controllers/filmes');
 
 //rotas
-filmesRouter.get('/', (req, res) => {
-    filmeController.get(req, res);
-})
-
-filmesRouter.post('/', (req, res) => {
-    filmeController.create(req, res);
-})
-
-filmesRouter.get('/:id', (req, res) => {
-    filmeController.getById(req, res);
-})
-
-filmesRouter.put('/:id', (req, res) => {
-    filmeController.update(req, res);
-})
-
-filmesRouter.delete('/:id', (req, res) => {
-    filmeController.remove(req, res);
-})
+filmesRouter.get('/', filmeController.get);
+filmesRouter.post('/', authService.isAdmin, filmeController.create);
+filmesRouter.get('/:id', filmeController.getById);
+filmesRouter.get('/ator/:ator', filmeController.getByActors);
+filmesRouter.put('/:id', authService.isAdmin, filmeController.update);
+filmesRouter.delete('/:id', authService.isAdmin, filmeController.remove);
 
 module.exports = filmesRouter;

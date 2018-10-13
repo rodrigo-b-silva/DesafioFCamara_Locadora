@@ -2,17 +2,32 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const filmeSchema = new Schema({
-    nome: { type: String},
-    genero: { type: String},
+    nome: { 
+        type: String,
+        required: true,
+        trim: true, //remove espaços em branco do começo e do fim
+        unique: true, // indica que não haverá os filmes com o mesmo nome
+        index: true // indoca um indice para facilitar a busca
+    },
+    genero: { type: String },
+    lancamento: { type: Date },
+    duracao: { type: Number },
+    diretor: { type: String },
+    sinopse: { type: String },
+    quantidade: { 
+        type: Number,
+        default: 1 
+    },
     atores: [
-        { type: String}
+        { 
+            type: String,
+            required: true 
+        }
     ],
-    lancamento: { type: Date},
-    duracao: { type: Number},
-    diretor: { type: String},
-    sinopse: { type: String},
-    quantidade: { type: Number }
-
+    preco: { 
+        type: Number,
+        required: true
+    }
 });
 
-module.exports = mongoose.model('filme', filmeSchema, 'filmes');
+module.exports = mongoose.model('Filme', filmeSchema);
