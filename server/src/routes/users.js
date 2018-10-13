@@ -1,32 +1,21 @@
 //módulos
 const express = require('express');
 const userRouter = express.Router();
+const authService = require('../services/auth.service');
 
 //model
 const User = require('../models/users');
 
 //importa e instancia o UserController
-const UserController = require('../controllers/users');
-const userController = new UserController(User);
+const userController = require('../controllers/users');
 
-userRouter.get('/', (req, res) => {
-    userController.get(req, res);
-});
-
-userRouter.post('/', (req, res) => {
-    userController.create(req, res);
-});
-
-userRouter.get('/:id', (req, res) => {
-    userController.getById(req, res);
-});
-
-userRouter.put('/:id', (req, res) => {
-    userController.update(req, res);
-});
-
-userRouter.delete('/:id', (req, res) => {
-    userController.remove(req, res);
-});
+//rotas
+userRouter.get('/', authService.authorize, userController.get);
+userRouter.post('/', userController.create);
+userRouter.get('/:id', authService.authorize, userController.getById);
+userRouter.put('/:id', authService.isAdmin, userController.update);
+userRouter.delete('/:id', authService.isAdmin, userController.remove);
+userRouter.post('/authenticate', userController.authenticate);
+userRouter.post('/refresh-token', authService.authorize, userController.refreshToken);
 
 module.exports = userRouter;
