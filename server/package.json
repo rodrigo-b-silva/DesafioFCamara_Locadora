@@ -2,7 +2,7 @@
   "name": "desafiofcamara_locadora",
   "version": "1.0.0",
   "description": "Desafio de locação de filmes",
-  "main": "server.js",
+  "main": "bin/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,6 +15,8 @@
     "config": "^1.29.4",
     "cors": "^2.8.4",
     "express": "^4.16.3",
+    "jsonwebtoken": "^7.4.0",
+    "md5": "^2.2.1",
     "moment": "^2.22.2",
     "mongoose": "^5.3.1"
   }

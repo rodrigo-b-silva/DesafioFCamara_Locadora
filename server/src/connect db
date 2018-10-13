@@ -1,0 +1,5 @@
+User Mlab Locadora
+dbuser: admin
+dbpassword: admin123locadora
+
+mongodb://<dbuser>:<dbpassword>@ds045097.mlab.com:45097/locadora
